@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CALINE Duftfinder</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CALINE Duftfinder GUI</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="fade-in">Finde dein CALINE-Lieblingsparfum</h1>
+  <h1>Finde dein CALINE-Lieblingsparfum</h1>
 
-  <form id="duftForm" class="slide-up">
-    <h2>Wähle deine Duftnoten:</h2>
-    <label><input type="checkbox" name="note" value="Blumig"> 🌸 Blumig</label><br>
-    <label><input type="checkbox" name="note" value="Fruchtig"> 🍊 Fruchtig</label><br>
-    <label><input type="checkbox" name="note" value="Pudrig"> 💨 Pudrig</label><br>
-    <label><input type="checkbox" name="note" value="Orientalisch"> 🔥 Orientalisch</label><br>
-    <label><input type="checkbox" name="note" value="Gourmand"> 🍬 Gourmand</label><br>
-    <label><input type="checkbox" name="note" value="Holzig"> 🌲 Holzig</label><br>
-    <label><input type="checkbox" name="note" value="Aromatisch"> 🌿 Aromatisch</label><br>
-    <label><input type="checkbox" name="note" value="Frisch"> ❄️ Frisch</label><br><br>
-    <button type="submit">Vorschlagen</button>
-  </form>
+  <div id="duft-noten" class="grid">
+    <!-- Duft-Kacheln werden hier dynamisch eingefügt -->
+  </div>
+
+  <button id="show-results" disabled>Vorschlagen</button>
 
   <div id="ergebnisse" class="results"></div>
 

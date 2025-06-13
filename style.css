@@ -1,67 +1,103 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
   background: #fff7f5;
   color: #333;
-  padding: 2rem;
-  max-width: 600px;
-  margin: auto;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
+  margin-bottom: 1.5rem;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  color: #ff6f91;
+  text-shadow: 0 2px 5px rgba(255,111,145,0.3);
 }
 
-form {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(110px,1fr));
+  gap: 15px;
+  margin-bottom: 1.5rem;
 }
 
-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
+.kachel {
   background: #ffb6b9;
+  border-radius: 12px;
+  padding: 1rem;
   color: white;
-  font-weight: bold;
-  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 6px rgba(255,111,145,0.4);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+}
+
+.kachel:hover {
+  background: #ff9a9e;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(255,111,145,0.7);
+}
+
+.kachel.selected {
+  background: #ff477e;
+  box-shadow: 0 0 15px 3px #ff477e88;
+  transform: scale(1.1);
+}
+
+.kachel span {
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
+button#show-results {
+  background: #ff6f91;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  box-shadow: 0 4px 10px #ff6f9166;
+  user-select: none;
 }
 
-button:hover {
-  background: #ff9a9e;
+button#show-results:disabled {
+  background: #ffb6b9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button#show-results:hover:not(:disabled) {
+  background: #ff477e;
 }
 
 .results {
   margin-top: 2rem;
+  text-align: left;
 }
 
 .card {
   background: #ffeaea;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #ffb6b966;
   animation: fadeIn 0.7s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-  animation: fadeIn 1.5s ease forwards;
-}
-
-.slide-up {
-  animation: slideUp 1.5s ease forwards;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(100px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
